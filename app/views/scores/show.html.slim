@@ -1,2 +1,25 @@
-h1 Scores#show
-p Find me in app/views/scores/show.html.slim
+h1 気分の詳細
+
+.nav.justify-content-end
+  = link_to '一覧', scores_path, class: 'nav-link'
+
+table.table.table-hover
+  tbody
+    tr
+      th= Score.human_attribute_name(:wakeup_on)
+      td= @score.wakeup_on
+    tr
+      th= Score.human_attribute_name(:score)
+      td= @score.score
+    tr
+      th= Score.human_attribute_name(:reason)
+      td= @score.reason
+    tr
+      th= Score.human_attribute_name(:cause)
+      td= @score.cause
+    tr
+      th= Score.human_attribute_name(:created_at)
+      td= @score.created_at
+    tr
+      th= Score.human_attribute_name(:updated_at)
+      td= @score.updated_at
