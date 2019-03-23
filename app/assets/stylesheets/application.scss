@@ -1,1 +1,6 @@
+@import "bootswatch/minty/variables";
 @import "bootstrap";
+@import "bootswatch/minty/bootswatch";
+
+h1 {font-size: 2rem; }
+.container { padding-top: 30px; }
