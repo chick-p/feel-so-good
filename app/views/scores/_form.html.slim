@@ -1,3 +1,8 @@
+- if score.errors.present?
+  ul#error_explanation
+    - score.errors.full_messages.each do |message|
+      li= message
+
 = form_with model: score, local: true do |f|
   .form-group
     = f.label :date
