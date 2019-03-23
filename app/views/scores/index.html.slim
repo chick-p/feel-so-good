@@ -10,6 +10,7 @@ table.table.table-hover
       th= Score.human_attribute_name(:score)
       th= Score.human_attribute_name(:reason)
       th= Score.human_attribute_name(:cause)
+      th
   tbody
     - @scores.each do |score|
       tr
@@ -17,3 +18,5 @@ table.table.table-hover
         td= score.score
         td= score.reason
         td= score.cause
+        td
+          = link_to '編集', edit_score_path(score), class: 'btn btn-primary mr-3'

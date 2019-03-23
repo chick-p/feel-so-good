@@ -18,6 +18,13 @@ class ScoresController < ApplicationController
   end
 
   def edit
+    @score = Score.find(params[:id])
+  end
+
+  def update
+    score = Score.find(params[:id])
+    score.update!(score_params)
+    redirect_to scores_url, notice: "#{score.wakeup_on} の気分を更新しました。"
   end
 
   private

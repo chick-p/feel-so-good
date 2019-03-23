@@ -1,2 +1,23 @@
-h1 Scores#edit
-p Find me in app/views/scores/edit.html.slim
+h1 スコアの編集
+
+.nav.justify-content-end
+  = link_to '一覧', scores_path, class: 'nav-link'
+
+= form_with model: @score, local: true do |f|
+  .form-group
+    = f.label :date
+    = f.text_field :wakeup_on, class: 'form-control datetimepicker-input', id: 'score_date', type: "date", required: true
+  .form-group
+    = f.label :score
+    .col-xs-9
+    - (-5..5).each do |i|
+      .form-check-inline
+        = f.radio_button :score, i, class: 'form-check-input', id: "score_score-#{i}"
+        = f.label "score_score-#{i}", i, class: 'form-check-label'
+  .form-group
+    = f.label :reason
+    = f.text_field :reason, class: 'form-control', id: 'score_reason', required: true
+  .form-group
+    = f.label :cause
+    = f.text_field :cause, class: 'form-control', id: 'score_cause'
+  = f.submit '更新する', class: 'btn btn-primary'
