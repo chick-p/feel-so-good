@@ -27,6 +27,12 @@ class ScoresController < ApplicationController
     redirect_to scores_url, notice: "#{score.wakeup_on} の気分を更新しました。"
   end
 
+  def destroy
+    score = Score.find(params[:id])
+    score.destroy
+    redirect_to scores_url, notice: "#{score.wakeup_on} の気分を削除しました。"
+  end
+
   private
   def score_params
     params.require(:score).permit(:wakeup_on, :score, :reason, :cause)

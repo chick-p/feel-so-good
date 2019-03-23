@@ -25,3 +25,4 @@ table.table.table-hover
       td= @score.updated_at
 
 = link_to '編集', edit_score_path, class: 'btn btn-primary mr-3'
+= link_to '削除', @score, method: :delete, data: { confirm: "#{@score.wakeup_on} の気分を削除します。よろしいですか？" }, class: 'btn btn-danger'
