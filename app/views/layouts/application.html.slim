@@ -8,17 +8,20 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    .app-title.navbar.navbar-expand-md.navbar-light.bg-light
+    .app-title.navbar.navbar-expand-lg.navbar-dark.bg-primary
       .navbar-brand feel-so-good
+      button.navbar-toggler.navbar-toggler-right data-toggle='collapse' data-target='#menu' aria-controls='menu' aria-expanded='false' aria-label='Toggle navigation'
+        span.navbar-toggler-icon
 
-      ul.navbar-nav.ml-auto
-        - if current_user
-          li.nav-item= link_to '気分スコア一覧', scores_path, class: 'nav-link'
-          - if current_user.admin?
-            li.nav-item= link_to 'ユーザー一覧', admin_users_path, class: 'nav-link'
-          li.nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'
-        - else
-          li.nav-item= link_to 'ログイン', login_path, class: 'nav-link'
+      #menu.collapse.navbar-collapse
+        ul.navbar-nav.ml-auto
+          - if current_user
+            li.nav-item.active= link_to '気分スコア一覧', scores_path, class: 'nav-link'
+            - if current_user.admin?
+              li.nav-item= link_to 'ユーザー一覧', admin_users_path, class: 'nav-link'
+            li.nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'
+          - else
+            li.nav-item= link_to 'ログイン', login_path, class: 'nav-link'
     .container
       - if flash.notice.present?
         .alert.alert-success.alert-dismissible.fade.show
