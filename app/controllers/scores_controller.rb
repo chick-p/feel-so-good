@@ -12,9 +12,9 @@ class ScoresController < ApplicationController
   end
 
   def create
-    @score = Score.new(score_params)
+    @score = current_user.scores.new(score_params)
     if @score.save
-      redirect_to @score, notice: "#{score.wakeup_on} の気分を登録しました。"
+      redirect_to @score, notice: "#{@score.wakeup_on} の気分を登録しました。"
     else
       render :new
     end
@@ -27,7 +27,7 @@ class ScoresController < ApplicationController
   def update
     @score = Score.find(params[:id])
     if @score.update(score_params)
-      redirect_to @score, notice: "#{score.wakeup_on} の気分を更新しました。"
+      redirect_to @score, notice: "#{@score.wakeup_on} の気分を更新しました。"
     else
       render :edit
     end
