@@ -1,6 +1,6 @@
 class ScoresController < ApplicationController
   def index
-    @scores = current_user.scores
+    @scores = current_user.scores.order(wakeup_on: :desc)
   end
 
   def show
