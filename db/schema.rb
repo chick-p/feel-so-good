@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_22_114551) do
+ActiveRecord::Schema.define(version: 2019_03_23_034448) do
 
   create_table "scores", force: :cascade do |t|
     t.date "wakeup_on", null: false
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2019_03_22_114551) do
     t.string "cause", limit: 50
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_scores_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
