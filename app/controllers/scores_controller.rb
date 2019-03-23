@@ -1,10 +1,10 @@
 class ScoresController < ApplicationController
   def index
-    @scores = Score.all
+    @scores = current_user.scores
   end
 
   def show
-    @score = Score.find(params[:id])
+    @score = current_user.scores.find(params[:id])
   end
 
   def new
@@ -21,11 +21,11 @@ class ScoresController < ApplicationController
   end
 
   def edit
-    @score = Score.find(params[:id])
+    @score = current_user.scores.find(params[:id])
   end
 
   def update
-    @score = Score.find(params[:id])
+    @score = current_user.scores.find(params[:id])
     if @score.update(score_params)
       redirect_to @score, notice: "#{@score.wakeup_on} の気分を更新しました。"
     else
@@ -34,7 +34,7 @@ class ScoresController < ApplicationController
   end
 
   def destroy
-    score = Score.find(params[:id])
+    score = current_user.scores.find(params[:id])
     score.destroy
     redirect_to scores_url, notice: "#{score.wakeup_on} の気分を削除しました。"
   end

@@ -8,4 +8,6 @@ class Score < ApplicationRecord
     validates :reason
     validates :cause
   end
+
+  belongs_to :user
 end
