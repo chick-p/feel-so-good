@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_23_034448) do
+ActiveRecord::Schema.define(version: 2019_03_23_060338) do
 
   create_table "scores", force: :cascade do |t|
     t.date "wakeup_on", null: false
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_03_23_034448) do
     t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
