@@ -40,3 +40,9 @@ Ruby 2.6.2
   ```shell
   $ bundle exec rspec
   ```
+
+* How to set timezone
+  ```shell
+  # If your timezone is Asia/Tokyo
+  $ heroku config:add TZ=Asia/Tokyo
+  ```
