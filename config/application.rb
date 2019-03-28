@@ -10,10 +10,14 @@ module FeelSoGood
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
+    config.available_locales = :ja
+    default_locale = :ja
+    config.time_zone = 'Asia/Tokyo'
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    Time::DATE_FORMATS[:default] = '%Y-%m-%d %H:%M'
   end
 end
