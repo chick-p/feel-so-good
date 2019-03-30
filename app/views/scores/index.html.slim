@@ -1,6 +1,6 @@
 h1 気分スコア一覧
 
-= link_to '新規登録', new_score_path, class: 'btn btn-primary'
+= link_to (fa_icon 'plus', text: ' 新規登録'), new_score_path, class: 'btn btn-primary'
 
 .mb-3
 table.table.table-hover
@@ -19,6 +19,6 @@ table.table.table-hover
         td= score.reason
         td= score.cause
         td
-          = link_to '編集', edit_score_path(score), class: 'btn btn-primary mr-3'
-          = link_to '削除', score, method: :delete, data: { confirm: "#{score.wakeup_on} の気分を削除します。よろしいですか？" }, class: 'btn btn-danger'
+          = link_to (fa_icon 'pencil', text: ' 編集'), edit_score_path(score), class: 'btn btn-primary mr-3'
+          = link_to (fa_icon 'trash-o', text: ' 削除'), score, method: :delete, data: { confirm: "#{score.wakeup_on} の気分を削除します。よろしいですか？" }, class: 'btn btn-danger'
 
