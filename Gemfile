@@ -21,6 +21,7 @@ gem 'bootswatch'
 gem 'jquery-rails'
 gem "font-awesome-rails"
 
+gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 
