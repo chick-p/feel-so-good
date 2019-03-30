@@ -19,6 +19,7 @@ gem 'heroku-rack-ssl-enforcer-rails'
 gem 'bootstrap'
 gem 'bootswatch'
 gem 'jquery-rails'
+gem "font-awesome-rails"
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
