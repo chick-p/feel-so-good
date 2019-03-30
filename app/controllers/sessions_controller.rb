@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   skip_before_action :login_required, only: [:new, :create, :omniauth]
 
   def new
+    reset_session
   end
 
   def create
