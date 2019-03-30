@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :login_required, only: [:new, :create]
+  skip_before_action :login_required, only: [:new, :create, :omniauth]
 
   def new
   end
@@ -12,6 +12,17 @@ class SessionsController < ApplicationController
       redirect_to root_path, notice: 'ログインしました。'
     else
       flash.now[:alert] = 'ID かパスワードが違います。'
+      render :new
+    end
+  end
+
+  def omniauth
+    user = User.find_for_oauth(request.env['omniauth.auth'])
+    if user.persisted?
+      session[:user_id] = user.id
+      redirect_to root_path, notice: 'ユーザー認証が完了しました。'
+    else
+      flash.now[:alert] = 'ユーザー認証に失敗しました。'
       render :new
     end
   end

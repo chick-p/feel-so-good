@@ -30,6 +30,12 @@ Ruby 2.6.2
   $ heroku run rails db:migrate
   ```
 
+* Enviroment variables
+  ```shell
+  $ heroku config:set TWITTER_KEY=[YOUR_TWITTER_API_KEY]
+  $ heroku config:set TWITTER_SECRET=[YOUR_TWITTER_API_SECRET]
+  ```
+
 * Database initialization
   ```shell
   $ heroku run rails c
