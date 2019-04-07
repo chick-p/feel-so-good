@@ -10,6 +10,8 @@ class ApplicationController < ActionController::Base
   def find_user
     if session[:user_id]
       User.find_by(id: session[:user_id])
+    elsif request.headers['X-Feel-So-Good-Authorization']
+      User.find_by(token: request.headers['X-Feel-So-Good-Authorization'])
     else
       nil
     end

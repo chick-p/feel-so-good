@@ -6,6 +6,11 @@ class User < ApplicationRecord
 
   has_many :scores
 
+  def initialize(*)
+    super
+    self.token ||= SecureRandom.alphanumeric(20)
+  end
+
   def self.find_for_oauth(auth)
     user = User.where(uid: auth[:uid], provider: auth[:provider]).first
     unless user

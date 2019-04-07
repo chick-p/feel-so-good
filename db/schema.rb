@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_30_040436) do
+ActiveRecord::Schema.define(version: 2019_04_07_111042) do
 
   create_table "scores", force: :cascade do |t|
     t.date "wakeup_on", null: false
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2019_03_30_040436) do
     t.string "provider"
     t.string "uid"
     t.string "t_username"
+    t.string "token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true
   end
