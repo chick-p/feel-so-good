@@ -4,8 +4,17 @@ class ApplicationController < ActionController::Base
 
   private
   def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+    @current_user ||= find_user
   end
+
+  def find_user
+    if session[:user_id]
+      User.find_by(id: session[:user_id])
+    else
+      nil
+    end
+  end
+
 
   def login_required
     redirect_to login_path unless current_user
