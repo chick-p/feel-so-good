@@ -39,7 +39,7 @@ Ruby 2.6.2
 * Database initialization
   ```shell
   $ heroku run rails c
-  irb(main):002:0> User.new(name: 'your name', email: 'sample@example.com', password: 'password', password_confirmation: 'password', admin: true).save
+  irb(main):002:0> User.new(name: 'your name', email: 'sample@example.com', password: 'password', admin: true).save
   ```
 
 * How to run the test suite

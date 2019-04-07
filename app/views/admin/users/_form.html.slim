@@ -21,9 +21,6 @@
     = f.label :password, 'パスワード'
     = f.password_field :password, class: 'form-control', required: true
   .form-group
-    = f.label :password_confirmation, 'パスワード（確認）'
-    = f.password_field :password_confirmation, class: 'form-control', required: true
-  .form-group
     = button_tag type: 'submit', class: 'btn btn-primary' do
       i.fa.fa-floppy-o
       | #{@user.persisted? ? ' 編集する' : ' 登録する'}
