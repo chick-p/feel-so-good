@@ -20,6 +20,9 @@
   .form-group
     = f.label :password, 'パスワード'
     = f.password_field :password, class: 'form-control', required: true
+  - if @user.persisted?
+    .form-group
+      = link_to 'API Token', admin_user_token_path(@user), class: 'pull-right'
   .btn-toolbar
     .btn-group.mr-2
       = link_to '戻る', admin_users_path, class: 'btn btn-outline-primary'

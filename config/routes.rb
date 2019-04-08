@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :users
+    resources :users do
+      resource :token, only: [:show, :update]
+    end
   end
   resources :scores
 
