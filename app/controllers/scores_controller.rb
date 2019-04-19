@@ -1,7 +1,7 @@
 class ScoresController < ApplicationController
   def index
     @scores = current_user.scores.order(wakeup_on: :desc)
-    @labels, @dataset = get_labels(@scores)
+    @labels, @dataset = get_labels(current_user.scores.order(wakeup_on: :asc))
   end
 
   def show
