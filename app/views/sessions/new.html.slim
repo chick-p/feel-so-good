@@ -11,5 +11,6 @@ hr
   .form-group
     = f.submit 'ログインする', class: 'btn btn-primary'
 
-.form-group
-  = link_to (fa_icon 'twitter', text: ' Twitter でログイン'), '/auth/twitter', class: 'btn btn-info'
+- if @isTwitter == 'true'
+  .form-group
+    = link_to (fa_icon 'twitter', text: ' Twitter でログイン'), '/auth/twitter', class: 'btn btn-info'
