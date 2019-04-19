@@ -1,7 +1,16 @@
 - breadcrumb :show_user, @user
 
 h1 ユーザーの詳細
-hr
+
+.nav.justify-content-end
+  .btn-toolbar.toolbar
+    .btn-group.mr-2
+      = link_to (fa_icon 'plus'), new_admin_user_path, class: 'btn btn-outline-primary'
+    .btn-group.mr-2
+      = link_to (fa_icon 'pencil'), edit_admin_user_path, class: 'btn btn-outline-primary'
+    .btn-group.mr-2
+      = link_to (fa_icon 'trash-o'), [:admin, @user], method: :delete, data: { confirm: "#{@user.name} を削除します。よろしいですか？" }, class: 'btn btn-outline-danger'
+
 
 table.table.table-hover
   tbody
@@ -17,6 +26,3 @@ table.table.table-hover
     tr
       th= User.human_attribute_name(:updated_at)
       td= @user.updated_at
-
-= link_to (fa_icon 'pencil', text: ' 編集'), edit_admin_user_path, class: 'btn btn-primary mr-3'
-= link_to (fa_icon 'trash-o', text: ' 削除'), [:admin, @user], method: :delete, data: { confirm: "#{@user.name} を削除します。よろしいですか？" }, class: 'btn btn-danger'

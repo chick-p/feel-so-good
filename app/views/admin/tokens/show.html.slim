@@ -1,5 +1,4 @@
 h1 API Token の更新
-hr
 
 = form_with url: admin_user_token_path, method: :put, local: true do |f|
   .form-group
@@ -7,7 +6,7 @@ hr
     = f.text_field :token, class: 'form-control', id: 'users_token', disabled: true, value: @user.token
   .btn-toolbar
     .btn-group.mr-2
-      = link_to '戻る', edit_admin_user_path(@user), class: 'btn btn-outline-primary'
+      = link_to 'キャンセル', edit_admin_user_path(@user), class: 'btn btn-outline-primary'
     .btn-group.mr-2
       = button_tag type: 'submit', class: 'btn btn-primary' do
         i.fa.fa-refresh

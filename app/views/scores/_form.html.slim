@@ -22,8 +22,6 @@
     = f.text_field :cause, class: 'form-control', id: 'score_cause'
   .btn-toolbar
     .btn-group.mr-2
-      = link_to '戻る', scores_path, class: 'btn btn-outline-primary'
+      = link_to 'キャンセル', scores_path, class: 'btn btn-outline-primary'
     .btn-group.mr-2
-      = button_tag type: 'submit', class: 'btn btn-primary' do
-        i.fa.fa-floppy-o
-        | #{@score.persisted? ? ' 編集する' : ' 登録する'}
+      = f.submit '保存する', class: 'btn btn-primary'

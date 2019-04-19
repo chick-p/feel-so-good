@@ -3,7 +3,16 @@
 @import "bootswatch/minty/bootswatch";
 @import "font-awesome";
 
-h1 {font-size: 1.5rem; }
+h1 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+table {
+  table-layout: fixed;
+  word-break: break-all;
+  word-wrap: break-all;
+}
 .container { padding-top: 30px; }
 .breadcrumb a {color: rgba(0, 0, 0, 0.3);}
 .breadcrumb a:hover {color: #5a5a5a}
+.btn-toolbar.toolbar { margin-bottom: 10px; }
