@@ -1,6 +1,7 @@
 class ScoresController < ApplicationController
   def index
     @scores = current_user.scores.order(wakeup_on: :desc)
+    @labels, @dataset = get_labels(@scores)
   end
 
   def show
@@ -42,6 +43,16 @@ class ScoresController < ApplicationController
   private
   def score_params
     params.require(:score).permit(:wakeup_on, :score, :reason, :cause)
+  end
+
+  def get_labels(scores)
+    labels = []
+    dataset = []
+    scores.each do |score|
+      labels.push(score.wakeup_on)
+      dataset.push(score.score)
+    end
+    return labels.slice(0, 30).to_json.html_safe, dataset.slice(0, 30)
   end
 
 end

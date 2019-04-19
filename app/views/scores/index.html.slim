@@ -2,6 +2,45 @@
 
 h1 気分スコア一覧
 
+canvas id="myChart"
+javascript:
+  window.onload = function(){
+    var ctx = document.getElementById('myChart').getContext('2d');
+    ctx.canvas.height = 150;
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: #{@labels},
+        datasets: [{
+          label: 'Score',
+          data: #{@dataset},
+          backgroundColor: '#6cc3d5',
+          borderColor: '#6cc3d5',
+          fill: false
+        }]
+      },
+      options: {
+        responsive: true,
+        legend: {
+          display: false
+        },
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: false,
+              min: -5,
+              max: 5,
+              stepSize: 1
+            },
+            gridLines: {
+              borderDash: [3,5]
+            }
+          }]
+        }
+      }
+    });
+  };
+
 .nav.justify-content-end
   = link_to (fa_icon 'plus'), new_score_path, class: 'btn btn-outline-primary'
 
