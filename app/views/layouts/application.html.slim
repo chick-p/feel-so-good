@@ -36,4 +36,6 @@ html
           = flash.alert
           button.close type='button' data-dismiss='alert' aria-label='閉じる'
             span aria-hidden='true' &times;
+      breadcrumb
+        == breadcrumbs style: :bootstrap, semantic: true, separator: '&nbsp;&rsaquo;&nbsp;', class: 'breadcrumb bg-light'
       = yield

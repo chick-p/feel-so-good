@@ -1,7 +1,6 @@
+- breadcrumb :edit_user, @user
+
 h1 ユーザーの編集
 hr
-
-.nav.justify-content-end
-  = link_to '一覧', admin_users_path, class: 'nav-link'
 
 = render partial: 'form', locals: { user: @user }

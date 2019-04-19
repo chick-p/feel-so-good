@@ -1,7 +1,6 @@
+- breadcrumb :new_score
+
 h1 スコアの新規登録
 hr
-
-.nav.justify-content-end
-  = link_to '一覧', scores_path, class: 'nav-link'
 
 = render partial: 'form', locals: { score: @score }
