@@ -2,7 +2,7 @@
 
 h1 気分スコア一覧
 
-canvas id="myChart"
+canvas id="chart"
 javascript:
   if (document.readyState === "complete") {
     drawChart();
@@ -10,8 +10,9 @@ javascript:
     document.addEventListener("DOMContentLoaded", drawChart);
   }
   function drawChart(){
+    var ctx = document.getElementById('chart').getContext('2d');
     ctx.canvas.height = 150;
-    var myChart = new Chart(ctx, {
+    var chart = new Chart(ctx, {
       type: 'line',
       data: {
         labels: #{@labels},
@@ -29,8 +30,14 @@ javascript:
           display: false
         },
         scales: {
+          xAxes: [{
+             ticks: {
+               fontSize: 8
+             }
+          }],
           yAxes: [{
             ticks: {
+               fontSize: 8,
               beginAtZero: false,
               min: -5,
               max: 5,
