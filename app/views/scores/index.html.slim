@@ -4,8 +4,12 @@ h1 気分スコア一覧
 
 canvas id="myChart"
 javascript:
-  window.onload = function(){
-    var ctx = document.getElementById('myChart').getContext('2d');
+  if (document.readyState === "complete") {
+    drawChart();
+  } else {
+    document.addEventListener("DOMContentLoaded", drawChart);
+  }
+  function drawChart(){
     ctx.canvas.height = 150;
     var myChart = new Chart(ctx, {
       type: 'line',
