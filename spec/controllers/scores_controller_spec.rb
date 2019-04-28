@@ -2,6 +2,12 @@ require 'rails_helper'
 
 RSpec.describe ScoresController, type: :controller do
 
+  before do
+    @user = FactoryBot.create(:user)
+    @score = FactoryBot.create(:score, user: @user)
+    session[:user_id] = @user.id
+  end
+
   describe "GET #index" do
     it "returns http success" do
       get :index
@@ -11,7 +17,7 @@ RSpec.describe ScoresController, type: :controller do
 
   describe "GET #show" do
     it "returns http success" do
-      get :show
+      get :show, params: { id: @score.id }
       expect(response).to have_http_status(:success)
     end
   end
@@ -25,7 +31,7 @@ RSpec.describe ScoresController, type: :controller do
 
   describe "GET #edit" do
     it "returns http success" do
-      get :edit
+      get :edit, params: { id: @score.id }
       expect(response).to have_http_status(:success)
     end
   end
