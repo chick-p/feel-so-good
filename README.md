@@ -1,5 +1,7 @@
 # README
 
+[![CircleCI](https://circleci.com/gh/chick-p/feel-so-good/tree/master.svg?style=svg)](https://circleci.com/gh/chick-p/feel-so-good/tree/master)
+
 This application is an application which can register your feeling.
 
 You record the followings:
