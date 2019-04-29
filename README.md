@@ -33,12 +33,12 @@ Ruby 2.6.3
   ```
 
 * Enviroment variables
-    * if can login by twitter
-    ```shell
-    $ heroku config:set TWITTER_ENABLED=false
-    $ heroku config:set TWITTER_KEY=[YOUR_TWITTER_API_KEY]
-    $ heroku config:set TWITTER_SECRET=[YOUR_TWITTER_API_SECRET]
-    ```
+    * if login using twitter account.
+        ```shell
+        $ heroku config:set TWITTER_ENABLED=true
+        $ heroku config:set TWITTER_KEY=[YOUR_TWITTER_API_KEY]
+        $ heroku config:set TWITTER_SECRET=[YOUR_TWITTER_API_SECRET]
+        ```
 
 * Database initialization
   ```shell
