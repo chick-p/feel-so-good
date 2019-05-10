@@ -17,3 +17,4 @@
 //= require bootstrap-sprockets
 //= require_tree .
 //= require Chart.min
+//= require serviceworker-companion
