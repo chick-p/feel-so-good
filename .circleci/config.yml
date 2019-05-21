@@ -16,7 +16,7 @@ jobs:
       - save_cache:
           key: rails-bundle-{{ checksum "Gemfile.lock" }}
           paths:
-            - .bundle
+            - vendor/bundle
       - run:
           name: DB Setup
           command: |
