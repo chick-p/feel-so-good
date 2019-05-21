@@ -36,4 +36,26 @@ RSpec.describe ScoresController, type: :controller do
     end
   end
 
+  describe "POST #edit" do
+    it "returns http redirect" do
+      post :update, params: { id: @score.id,
+                              score: {
+                                wakeup_on: '2017-08-20',
+                                score: 3,
+                                reason: 'foo',
+                                cause: 'bar'
+                              }
+                            }
+      expect(response).to have_http_status(302)
+    end
+  end
+
+  describe "DELETE #destroy" do
+    context 'visible score' do
+      it "returns http redirect" do
+        delete :destroy, params: { id: @score.id }
+        expect(response).to have_http_status(302)
+      end
+    end
+  end
 end
