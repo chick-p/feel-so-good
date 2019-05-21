@@ -1,7 +1,7 @@
 # README
 
 [![CircleCI](https://circleci.com/gh/chick-p/feel-so-good/tree/master.svg?style=shield)](https://circleci.com/gh/chick-p/feel-so-good/tree/master)
-[![Coverage Status](https://coveralls.io/repos/github/chick-p/feel-so-good/badge.svg?branch=master)](https://coveralls.io/github/chick-p/feel-so-good?branch=master&service=github)
+[![Coverage Status](https://coveralls.io/repos/github/chick-p/feel-so-good/badge.svg?branch=master&service=github)](https://coveralls.io/github/chick-p/feel-so-good?branch=master)
 
 This application is an application which can register your feeling.
 
