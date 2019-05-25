@@ -21,4 +21,18 @@ RSpec.describe MeController, type: :controller do
     end
   end
 
+  describe "POST #update" do
+    it "returns http redirect" do
+      post :update, params: { id: @user.id,
+                              user: {
+                                name: 'foo',
+                                email: 'bar@example.com',
+                                admin: false,
+                                password: 'baz'
+                              }
+                            }
+      expect(response).to have_http_status(302)
+    end
+  end
+
 end
