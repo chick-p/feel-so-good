@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :users do
-      resource :token, only: [:show, :update]
-    end
+    resources :users
   end
   resources :scores
 
@@ -11,5 +9,12 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   get '/auth/:provider/callback', to: 'sessions#omniauth'
+
+  get '/me', to: 'me#index'
+  get '/me/edit', to: 'me#edit'
+  put '/me/edit', to: 'me#update'
+  get '/me/token', to: 'token#index'
+  put '/me/token', to: 'token#update'
+
   root to: 'scores#index'
 end

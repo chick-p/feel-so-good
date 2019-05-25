@@ -21,8 +21,9 @@ html
         ul.navbar-nav.ml-auto
           - if current_user
             li.nav-item.active= link_to (fa_icon 'heart', text: ' 気分スコア'), scores_path, class: 'nav-link'
+            li.nav-item= link_to (fa_icon 'user ', text: ' ユーザー情報'), me_path, class: 'nav-link'
             - if current_user.admin?
-              li.nav-item= link_to (fa_icon 'user ', text: ' ユーザー管理'), admin_users_path, class: 'nav-link'
+              li.nav-item= link_to (fa_icon 'users ', text: ' ユーザー管理'), admin_users_path, class: 'nav-link'
             li.nav-item= link_to (fa_icon 'sign-out', text: ' ログアウト'), logout_path, method: :delete, class: 'nav-link'
           - else
             li.nav-item= link_to (fa_icon 'sign-in', text: ' ログイン'), login_path, class: 'nav-link'
