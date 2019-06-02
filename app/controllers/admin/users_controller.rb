@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Admin::UsersController < ApplicationController
   before_action :reqire_admin
   def index
@@ -16,7 +18,6 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-
   def create
     @user = User.new(user_params)
 
@@ -26,7 +27,6 @@ class Admin::UsersController < ApplicationController
       render :new
     end
   end
-
 
   def update
     @user = User.find(params[:id])
@@ -45,6 +45,7 @@ class Admin::UsersController < ApplicationController
   end
 
   private
+
   def user_params
     params.require(:user).permit(:name, :email, :admin, :password)
   end

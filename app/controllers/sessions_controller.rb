@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class SessionsController < ApplicationController
-  skip_before_action :login_required, only: [:new, :create, :omniauth]
+  skip_before_action :login_required, only: %i[new create omniauth]
 
   def new
     reset_session
-    @isTwitter = ENV["TWITTER_ENABLED"]
+    @isTwitter = ENV['TWITTER_ENABLED']
   end
 
   def create
@@ -35,6 +37,7 @@ class SessionsController < ApplicationController
   end
 
   private
+
   def session_params
     params.require(:session).permit(:email, :password)
   end

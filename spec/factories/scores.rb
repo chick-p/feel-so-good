@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :score do
     wakeup_on { '2019-04-28' }

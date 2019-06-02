@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ScoresController < ApplicationController
   def index
     @scores = current_user.scores.order(wakeup_on: :desc)
@@ -41,6 +43,7 @@ class ScoresController < ApplicationController
   end
 
   private
+
   def score_params
     params.require(:score).permit(:wakeup_on, :score, :reason, :cause)
   end
@@ -52,7 +55,6 @@ class ScoresController < ApplicationController
       labels.push(score.wakeup_on)
       dataset.push(score.score)
     end
-    return labels.slice(0, 30).to_json.html_safe, dataset.slice(0, 30)
+    [labels.slice(0, 30).to_json.html_safe, dataset.slice(0, 30)]
   end
-
 end

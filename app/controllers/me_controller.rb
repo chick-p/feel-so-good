@@ -1,5 +1,6 @@
-class MeController < ApplicationController
+# frozen_string_literal: true
 
+class MeController < ApplicationController
   def index
     @user = current_user
   end
@@ -18,8 +19,8 @@ class MeController < ApplicationController
   end
 
   private
+
   def me_params
     params.permit(:name, :email, :password)
   end
-
 end
