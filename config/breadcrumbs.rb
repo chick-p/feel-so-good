@@ -41,3 +41,18 @@ crumb :edit_user do |user|
   link "Edit", edit_admin_user_path(user)
   parent :show_user, user
 end
+
+crumb :me do
+  link "Me", me_path
+  parent :root
+end
+
+crumb :edit_me do
+  link "Edit", me_edit_path
+  parent :me
+end
+
+crumb :token do
+  link "API Token", me_token_path
+  parent :edit_me
+end

@@ -1,0 +1,26 @@
+- breadcrumb :edit_me, @user
+
+h1 ユーザーの編集
+
+- if @user.errors.present?
+  ul#error_explanation
+    - score.errors.full_messages.each do |message|
+      li= message
+
+= form_with url: me_edit_path, method: :put, local: true do |f|
+  .form-group
+    = f.label :name, 'Name'
+    = f.text_field :name, value: @user.name, class: 'form-control', id: 'user_name', required: true
+  .form-group
+    = f.label :email, 'E-mail'
+    = f.text_field :email, value: @user.email, class: 'form-control', required: true
+  .form-group
+    = f.label :password, 'Password'
+    = f.password_field :password, class: 'form-control', required: true
+  .form-group
+    = link_to 'API Token', me_token_path, class: 'pull-right'
+  .btn-toolbar
+    .btn-group.mr-2
+      = link_to 'キャンセル', me_path, class: 'btn btn-outline-primary'
+    .btn-group.mr-2
+      = f.submit '保存する', class: 'btn btn-primary'

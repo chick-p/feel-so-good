@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe Admin::TokensController, type: :controller do
+RSpec.describe TokenController, type: :controller do
   before do
     @user = FactoryBot.create(:user, admin: true)
     session[:user_id] = @user.id
   end
 
-  describe "GET #show" do
+  describe "GET #index" do
     it "returns http success" do
-      get :show, params: { user_id: @user.id }
+      get :index, params: { user_id: @user.id }
       expect(response).to have_http_status(:success)
     end
   end
