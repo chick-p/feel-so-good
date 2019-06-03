@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
 
-  has_many :scores
+  has_many :scores, dependent: :nullify
 
   def initialize(*)
     super
@@ -24,7 +24,6 @@ class User < ApplicationRecord
       admin: false,
       password: Devise.friendly_token[0, 20]
     )
-
     user
   end
 
@@ -33,4 +32,5 @@ class User < ApplicationRecord
   def self.dummy_email(auth)
     "#{auth[:uid]}@#{auth[:provider]}.com"
   end
+
 end

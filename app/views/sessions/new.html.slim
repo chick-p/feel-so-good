@@ -10,6 +10,6 @@ h1 ログイン
   .form-group
     = f.submit 'ログインする', class: 'btn btn-primary'
 
-- if @isTwitter == 'true'
+- if @is_twitter == 'true'
   .form-group
     = link_to (fa_icon 'twitter', text: ' Twitter でログイン'), '/auth/twitter', class: 'btn btn-info'

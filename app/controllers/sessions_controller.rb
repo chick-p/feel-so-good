@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
   def new
     reset_session
-    @isTwitter = ENV['TWITTER_ENABLED']
+    @is_twitter = ENV['TWITTER_ENABLED']
   end
 
   def create
