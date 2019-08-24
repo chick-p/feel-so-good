@@ -1,0 +1,22 @@
+name: RSpec
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container:
+      image: ruby:2.6.3
+      env:
+        RAILS_ENV: test
+    steps:
+    - uses: actions/checkout@v1
+    - name: bundle install
+      run: |
+        bundle install --without production
+    - name: DB Setup
+      run: |
+        bundle exec rake db:create db:schema:load --trace
+        bundle exec rake db:migrate
+    - name: rspec
+      run: |
+        bundle exec rspec
