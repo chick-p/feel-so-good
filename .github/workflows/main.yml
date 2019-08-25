@@ -5,7 +5,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     container:
-      image: ruby:2.6.3
+      image: circleci/ruby:2.6.3-node
       env:
         RAILS_ENV: test
     steps:
