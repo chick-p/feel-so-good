@@ -12,11 +12,11 @@ jobs:
     - uses: actions/checkout@v1
     - name: bundle install
       run: |
-        bundle install --without production
+        sudo bundle install --without production
     - name: DB Setup
       run: |
-        bundle exec rake db:create db:schema:load --trace
-        bundle exec rake db:migrate
+        sudo bundle exec rake db:create db:schema:load --trace
+        sudo bundle exec rake db:migrate
     - name: rspec
       run: |
-        bundle exec rspec
+        sudo bundle exec rspec
