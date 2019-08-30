@@ -22,7 +22,7 @@ $ git push heroku master
 Things you may want to cover:
 
 * Ruby version
-Ruby 2.6.3
+Ruby 2.6.4
 
 * System dependencies
   * development: SQLite3
