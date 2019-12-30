@@ -12,11 +12,12 @@ You record the followings:
 * the reason for giving the score
 * the cause
 
+
 This application runs on a heroku server.
 
 ```shell
-$ heroku create APP_NAME
-$ git push heroku master
+heroku create APP_NAME
+git push heroku master
 ```
 
 Things you may want to cover:
@@ -29,31 +30,36 @@ Ruby 2.6.5
   * production: PostgreSQL 11
 
 * Database creation
+
   ```shell
-  $ heroku run rails db:migrate
+  heroku run rails db:migrate
   ```
 
 * Enviroment variables
-    * if login using twitter account.
+  * if login using twitter account.
+
         ```shell
-        $ heroku config:set TWITTER_ENABLED=true
-        $ heroku config:set TWITTER_KEY=[YOUR_TWITTER_API_KEY]
-        $ heroku config:set TWITTER_SECRET=[YOUR_TWITTER_API_SECRET]
+        heroku config:set TWITTER_ENABLED=true
+        heroku config:set TWITTER_KEY=[YOUR_TWITTER_API_KEY]
+        heroku config:set TWITTER_SECRET=[YOUR_TWITTER_API_SECRET]
         ```
 
 * Database initialization
+
   ```shell
   $ heroku run rails c
   irb(main):002:0> User.new(name: 'your name', email: 'sample@example.com', password: 'password', admin: true).save
   ```
 
 * How to run the test suite
+
   ```shell
-  $ bundle exec rspec
+  bundle exec rspec
   ```
 
 * How to set timezone
+
   ```shell
   # If your timezone is Asia/Tokyo
-  $ heroku config:add TZ=Asia/Tokyo
+  heroku config:add TZ=Asia/Tokyo
   ```
