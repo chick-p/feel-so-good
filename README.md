@@ -12,6 +12,7 @@ You record the followings:
 * the reason for giving the score
 * the cause
 
+## Usage
 
 This application runs on a heroku server.
 
@@ -63,3 +64,31 @@ Ruby 2.6.5
   # If your timezone is Asia/Tokyo
   heroku config:add TZ=Asia/Tokyo
   ```
+
+## Development
+
+Launch and develop this application on local as follows:
+
+If have not installed SQLite3 yet, install that.
+
+```shell
+brew install sqlite3
+```
+
+Install required gems
+
+```shell
+bundle install
+```
+
+Setup DB
+
+```shell
+bin/rails db:migrate
+```
+
+Launch local server to <http://localhost:3000>
+
+```shell
+bin/rails server
+```
