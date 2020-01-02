@@ -1,6 +1,6 @@
 module.exports = {
   "extends": "airbnb-typescript-prettier",
-  "plugins": ["jest"],
+  "plugins": ["react-app", "jest"],
   "env": {
     "jest": true
   },
